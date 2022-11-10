@@ -7,10 +7,10 @@ const ScrollingLogo = () => {
         <div className="marquee">
           <div className="marquee-inner">
             <div className="logo">
-              <img src="/assets/html.png" alt="html" />
+              <img src="/assets/html-logo.png" alt="html" />
             </div>
             <div className="logo">
-              <img src="assets/css.png" alt="css" />
+              <img src="assets/logo-css.png" alt="css" />
             </div>
             <div className="logo">
               <img src="/assets/javascript.png" alt="javascript" />
@@ -44,10 +44,10 @@ const ScrollingLogo = () => {
         <div className="marquee">
           <div className="marquee-inner">
             <div className="logo">
-              <img src="/assets/html.png" alt="html" />
+              <img src="/assets/html-logo.png" alt="html" />
             </div>
             <div className="logo">
-              <img src="assets/css.png" alt="css" />
+              <img src="assets/logo-css.png" alt="css" />
             </div>
             <div className="logo">
               <img src="/assets/javascript.png" alt="javascript" />
@@ -59,10 +59,10 @@ const ScrollingLogo = () => {
               <img src="/assets/node-js.webp" alt="node" />
             </div>
             <div className="logo">
-              <img src="/assets/express.png" alt="express" />
+              <img src="/assets/express-logo.png" alt="express" />
             </div>
             <div className="logo">
-              <img src="/assets/postgresql.png" alt="postgresql" />
+              <img src="/assets/postgresql-logo.png" alt="postgresql" />
             </div>
             <div className="logo">
               <img src="/assets/git.png" alt="git" />

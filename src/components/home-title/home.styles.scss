@@ -30,6 +30,7 @@
     .o {
       height: 50px;
       width: max-content;
+      cursor: pointer;
 
       h2 {
         font-size: 3rem;
@@ -92,8 +93,6 @@
     .one,
     .three,
     .four,
-    .eight,
-    .nine,
     .fourt,
     .sevent {
       margin-right: 3px;

@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 
+import HomeLoadBar from "../home-load-bar/home-load-bar.component";
+
 import "./home.styles.scss";
 
 const name = [
@@ -94,9 +96,9 @@ const HomeTitle = () => {
               duration: 0.8,
               delay: 3,
             }}
-            initial={{ opacity: 0, x: 150 }}
+            initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -150 }}
+            exit={{ opacity: 0, x: -50 }}
             className="hover-me"
           >
             <motion.p
@@ -134,6 +136,7 @@ const HomeTitle = () => {
           })}
         </div>
       </motion.div>
+      <HomeLoadBar />
     </div>
   );
 };

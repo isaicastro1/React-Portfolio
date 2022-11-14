@@ -1,0 +1,102 @@
+.home-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 600px;
+  margin: 0;
+  border: 1px solid red;
+
+  .home-title-intro {
+    font-size: 1.5rem;
+    margin: 0 115px 0 0;
+  }
+
+  .home-title-name {
+    display: flex;
+    width: max-content;
+    margin: 10px 0;
+
+    .i,
+    .s,
+    .a,
+    .i-2,
+    .c,
+    .a-2,
+    .s-2,
+    .t,
+    .r,
+    .o {
+      height: 50px;
+      width: max-content;
+
+      h2 {
+        font-size: 3rem;
+        margin: 0;
+      }
+    }
+
+    .i-2 {
+      margin-right: 10px;
+    }
+
+    .hover-me-p {
+      display: flex;
+      font-size: 0.8rem;
+      padding: 25px 0 0 45px;
+      margin: 0;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background-color: red;
+        width: 10px;
+        height: 3px;
+        top: 29px;
+        left: 25px;
+
+        -webkit-transform: rotate((-45) * 1deg);
+        -moz-transform: rotate((-45) * 1deg);
+        transform: rotate((-45) * 1deg);
+        -o-transform: rotate((-45) * 1deg);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: red;
+        width: 10px;
+        height: 3px;
+        top: 35px;
+        left: 25px;
+
+        -webkit-transform: rotate((45) * 1deg);
+        -moz-transform: rotate((45) * 1deg);
+        transform: rotate((45) * 1deg);
+        -o-transform: rotate((45) * 1deg);
+      }
+    }
+  }
+
+  .description-container {
+    display: flex;
+    flex-direction: row;
+
+    .description {
+      margin: 10px 0;
+      font-size: 1.3rem;
+    }
+
+    .one,
+    .three,
+    .four,
+    .eight,
+    .nine,
+    .fourt,
+    .sevent {
+      margin-right: 3px;
+    }
+  }
+}

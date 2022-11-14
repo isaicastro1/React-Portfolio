@@ -1,12 +1,16 @@
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
 
-import ScrollingLogo from "./components/scrolling-logo/scrolling-logo.component";
+import Home from "./routes/home";
+import NavBar from "./components/NavBar/NavBar.component";
 
 const App = () => {
   return (
-    <div className="App">
-      <ScrollingLogo />
-    </div>
+    <Routes>
+      <Route path="/" element={<NavBar />}>
+        <Route index element={<Home />} />
+        <Route path="other" element={<h1>Other Route</h1>} />
+      </Route>
+    </Routes>
   );
 };
 

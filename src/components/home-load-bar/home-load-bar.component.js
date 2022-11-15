@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 
 import "./home-load-bar.styles.scss";
 
-const HomeLoadBar = () => {
+const HomeLoadBar = ({ delay }) => {
   return (
     <motion.div
-      transition={{ duration: 0.6, delay: 3.5 }}
+      transition={{ duration: 0.6, delay: delay }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}

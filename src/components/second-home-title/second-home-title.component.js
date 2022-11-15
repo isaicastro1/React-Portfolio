@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 import HomeLoadBar from "../home-load-bar/home-load-bar.component";
 
-import "./home-title.styles.scss";
+import "./second-home-title.styles.scss";
 
 const name = [
   { id: "one", letter: "I" },
@@ -33,7 +33,7 @@ const name = [
   { id: "twent6", letter: "r" },
 ];
 
-const HomeTitle = () => {
+const SecondHomeTitle = () => {
   const hover = {
     scale: 1.3,
     transition: { duration: 0.1 },
@@ -43,7 +43,7 @@ const HomeTitle = () => {
 
   return (
     <div className="home-title">
-      <motion.div className="home">
+      <motion.div className="home second">
         <motion.h2
           className="home-title-intro"
           transition={{ ease: "easeInOut", duration: 0.8 }}
@@ -90,33 +90,6 @@ const HomeTitle = () => {
           <motion.div className="o" whileHover={hover}>
             <h2>o</h2>
           </motion.div>
-          <motion.div
-            transition={{
-              ease: "easeInOut",
-              duration: 0.8,
-              delay: 3,
-            }}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            className="hover-me"
-          >
-            <motion.p
-              className="hover-me-p"
-              transition={{
-                repeat: Infinity,
-                ease: "easeInOut",
-                duration: 0.8,
-                delay: 3,
-                repeatType: "reverse",
-              }}
-              initial={{ x: 10 }}
-              animate={{ x: 0 }}
-              exit={{ x: 10 }}
-            >
-              Hover me!
-            </motion.p>
-          </motion.div>
         </motion.div>
         <div className="description-container">
           {name.map((item, idx) => {
@@ -136,9 +109,9 @@ const HomeTitle = () => {
           })}
         </div>
       </motion.div>
-      <HomeLoadBar delay={3.7} />
+      <HomeLoadBar delay={3} />
     </div>
   );
 };
 
-export default HomeTitle;
+export default SecondHomeTitle;

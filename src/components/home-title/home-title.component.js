@@ -136,7 +136,7 @@ const HomeTitle = () => {
           })}
         </div>
       </motion.div>
-      <HomeLoadBar delay={3.7} />
+      <HomeLoadBar delay={3.7} time={5} />
     </div>
   );
 };

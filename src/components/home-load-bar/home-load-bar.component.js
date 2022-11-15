@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 import "./home-load-bar.styles.scss";
 
-const HomeLoadBar = ({ delay }) => {
+const HomeLoadBar = ({ delay, time }) => {
   return (
     <motion.div
       transition={{ duration: 0.6, delay: delay }}
@@ -13,7 +13,7 @@ const HomeLoadBar = ({ delay }) => {
     >
       <motion.div
         className="progress"
-        transition={{ ease: "linear", duration: 5, delay: 3.7 }}
+        transition={{ ease: "linear", duration: time, delay: 3.7 }}
         initial={{ x: -350 }}
         animate={{ x: 0 }}
         exit={{ x: 350 }}

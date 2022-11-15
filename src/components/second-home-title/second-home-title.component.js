@@ -1,37 +1,10 @@
 import { motion } from "framer-motion";
 
 import HomeLoadBar from "../home-load-bar/home-load-bar.component";
+import { description } from "../../utils/description";
+import { titles } from "../../utils/titles";
 
 import "./second-home-title.styles.scss";
-
-const name = [
-  { id: "one", letter: "I" },
-  { id: "two", letter: "a" },
-  { id: "three", letter: "m" },
-  { id: "four", letter: "a" },
-  { id: "five", letter: "f" },
-  { id: "six", letter: "u" },
-  { id: "seven", letter: "l" },
-  { id: "eight", letter: "l" },
-  { id: "nine", letter: "-" },
-  { id: "ten", letter: "s" },
-  { id: "eleven", letter: "t" },
-  { id: "twelve", letter: "a" },
-  { id: "thirt", letter: "c" },
-  { id: "fourt", letter: "k" },
-  { id: "fift", letter: "w" },
-  { id: "sixt", letter: "e" },
-  { id: "sevent", letter: "b" },
-  { id: "eightt", letter: "d" },
-  { id: "ninet", letter: "e" },
-  { id: "twent", letter: "v" },
-  { id: "twent1", letter: "e" },
-  { id: "twent2", letter: "l" },
-  { id: "twent3", letter: "o" },
-  { id: "twent4", letter: "p" },
-  { id: "twent5", letter: "e" },
-  { id: "twent6", letter: "r" },
-];
 
 const SecondHomeTitle = () => {
   const hover = {
@@ -47,52 +20,27 @@ const SecondHomeTitle = () => {
         <motion.h2
           className="home-title-intro"
           transition={{ ease: "easeInOut", duration: 0.8 }}
-          initial={{ opacity: 0, y: 150 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -150 }}
+          exit={{ opacity: 0, y: -20 }}
         >
-          My name is
+          I am a
         </motion.h2>
         <motion.div
           className="home-title-name"
           transition={{ ease: "easeInOut", duration: 0.8, delay: 0.5 }}
-          initial={{ opacity: 0, y: 150 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -150 }}
+          exit={{ opacity: 0, y: -20 }}
         >
-          <motion.div className="i" whileHover={hover}>
-            <h2>I</h2>
-          </motion.div>
-          <motion.div className="s" whileHover={hover}>
-            <h2>s</h2>
-          </motion.div>
-          <motion.div className="a" whileHover={hover}>
-            <h2>a</h2>
-          </motion.div>
-          <motion.div className="i-2" whileHover={hover}>
-            <h2>í</h2>
-          </motion.div>
-          <motion.div className="c" whileHover={hover}>
-            <h2>C</h2>
-          </motion.div>
-          <motion.div className="a-2" whileHover={hover}>
-            <h2>a</h2>
-          </motion.div>
-          <motion.div className="s-2" whileHover={hover}>
-            <h2>s</h2>
-          </motion.div>
-          <motion.div className="t" whileHover={hover}>
-            <h2>t</h2>
-          </motion.div>
-          <motion.div className="r" whileHover={hover}>
-            <h2>r</h2>
-          </motion.div>
-          <motion.div className="o" whileHover={hover}>
-            <h2>o</h2>
-          </motion.div>
+          {titles.map((item, idx) => (
+            <motion.div className={`${item.id}`} key={idx} whileHover={hover}>
+              <h2>{item.letter}</h2>
+            </motion.div>
+          ))}
         </motion.div>
         <div className="description-container">
-          {name.map((item, idx) => {
+          {description.map((item, idx) => {
             delay += 0.03;
             return (
               <motion.div
@@ -109,7 +57,7 @@ const SecondHomeTitle = () => {
           })}
         </div>
       </motion.div>
-      <HomeLoadBar delay={3} />
+      <HomeLoadBar delay={3} time={5} />
     </div>
   );
 };

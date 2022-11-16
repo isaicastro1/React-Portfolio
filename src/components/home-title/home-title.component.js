@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
 
 import HomeLoadBar from "../home-load-bar/home-load-bar.component";
 
@@ -34,6 +35,21 @@ const name = [
 ];
 
 const HomeTitle = () => {
+  console.log("render");
+  const { scrollYProgress } = useScroll();
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScrollY(scrollYProgress.current);
+    });
+  }, []);
+
+  console.log("scrolly", scrollY);
+  console.log("scrolly progress", scrollYProgress.current);
+
+  const scale = useTransform(scrollYProgress, [0, 0.5], [0.5, 1]);
+
   const hover = {
     scale: 1.3,
     transition: { duration: 0.1 },
@@ -43,7 +59,7 @@ const HomeTitle = () => {
 
   return (
     <div className="home-title">
-      <motion.div className="home">
+      <motion.div className="home" style={{ scale }}>
         <motion.h2
           className="home-title-intro"
           transition={{ ease: "easeInOut", duration: 0.8 }}

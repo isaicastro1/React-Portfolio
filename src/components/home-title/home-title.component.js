@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useState, useRef } from "react";
+import { useLayoutEffect, useState, useRef } from "react";
 
 import HomeLoadBar from "../home-load-bar/home-load-bar.component";
 
@@ -35,20 +35,43 @@ const name = [
 ];
 
 const HomeTitle = () => {
-  console.log("render");
-  const { scrollYProgress } = useScroll();
-  const [scrollY, setScrollY] = useState(0);
+  //   const ref = useRef();
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScrollY(scrollYProgress.current);
-    });
-  }, []);
+  //   // Stores the start and end scrolling position for our container
+  //   const [scrollPercentageStart, setScrollPercentageStart] = useState(null);
+  //   const [scrollPercentageEnd, setScrollPercentageEnd] = useState(null);
 
-  console.log("scrolly", scrollY);
-  console.log("scrolly progress", scrollYProgress.current);
+  //   const { scrollY, scrollYProgress } = useScroll();
 
-  const scale = useTransform(scrollYProgress, [0, 0.5], [0.5, 1]);
+  //   // Use the container's start/end position percentage
+  //   const scale = useTransform(
+  //     scrollYProgress,
+  //     [scrollPercentageStart, scrollPercentageEnd],
+  //     [1, 0.5]
+  //   );
+
+  //   console.log("scrollYProgress", scrollYProgress);
+  //   console.log("scrollPercentageStart", scrollPercentageStart);
+  //   console.log("scrollPercentageEnd", scrollPercentageEnd);
+
+  //   useLayoutEffect(() => {
+  //     // Get the distance from the start of the page to the element start
+  //     const rect = ref.current.getBoundingClientRect();
+  //     console.log("rect", rect);
+  //     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  //     console.log("scrollTop", scrollTop);
+
+  //     const offsetStart = rect.top + scrollTop;
+  //     const offsetEnd = offsetStart + rect.height;
+  //     console.log("offsetStart", offsetStart);
+  //     console.log("offsetEnd", offsetEnd);
+
+  //     const elementScrollStart = offsetStart / document.body.clientHeight;
+  //     const elementScrollEnd = offsetEnd / document.body.clientHeight;
+
+  //     setScrollPercentageStart(elementScrollStart);
+  //     setScrollPercentageEnd(elementScrollEnd);
+  //   });
 
   const hover = {
     scale: 1.3,
@@ -59,7 +82,7 @@ const HomeTitle = () => {
 
   return (
     <div className="home-title">
-      <motion.div className="home" style={{ scale }}>
+      <motion.div className="home">
         <motion.h2
           className="home-title-intro"
           transition={{ ease: "easeInOut", duration: 0.8 }}

@@ -1,0 +1,22 @@
+.projects-container {
+  display: flex;
+  height: 100vh;
+  max-height: 100vh;
+  width: 300vw;
+  border: 1px solid green;
+  //   overflow: hidden;
+
+  .project {
+    width: 100px;
+    height: 100vh;
+    border: 1px solid blue;
+  }
+}
+
+.noScroll {
+  overflow-y: hidden;
+}
+
+.scroll {
+  overflow-y: scroll;
+}
